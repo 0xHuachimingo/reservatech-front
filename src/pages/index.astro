@@ -1,89 +1,20 @@
 ---
 // src/pages/index.astro
-// Aquí definimos unos datos de prueba para mostrar en la interfaz
-const servicios = [
-  { nombre: "Formateo de PC + Respaldo", precio: "$25.000", tiempo: "2 horas", icono: "💻" },
-  { nombre: "Limpieza y Pasta Térmica", precio: "$30.000", tiempo: "1 hora", icono: "🧹" },
-  { nombre: "Armado de Equipo Gamer", precio: "$45.000", tiempo: "3 horas", icono: "🛠️" }
-];
 ---
-
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>ReservaTech - Catálogo</title>
+    <title>Terminal</title>
     <style>
-      /* Estilos para el Modo Oscuro */
-      body {
-        background-color: #111827;
-        color: white;
-        font-family: system-ui, -apple-system, sans-serif;
-        margin: 0;
-        padding: 2rem;
-      }
-      .header { text-align: center; margin-bottom: 3rem; }
-      h1 { color: #60A5FA; font-size: 2.5rem; margin-bottom: 0.5rem; }
-      p.subtitle { color: #9CA3AF; font-size: 1.1rem; }
-      
-      /* Estilos para la grilla de servicios */
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-      .card {
-        background-color: #1F2937;
-        border: 1px solid #374151;
-        border-radius: 0.75rem;
-        padding: 1.5rem;
-        text-align: center;
-        transition: transform 0.2s, border-color 0.2s;
-      }
-      .card:hover {
-        transform: translateY(-5px);
-        border-color: #60A5FA;
-      }
-      .icon { font-size: 3.5rem; margin-bottom: 1rem; }
-      h2 { margin: 0 0 0.5rem 0; font-size: 1.25rem; }
-      .price { color: #34D399; font-weight: bold; font-size: 1.5rem; margin: 0.5rem 0; }
-      .time { color: #9CA3AF; font-size: 0.875rem; margin-bottom: 1.5rem; }
-      
-      button {
-        width: 100%;
-        padding: 0.75rem;
-        background-color: #2563EB;
-        color: white;
-        border: none;
-        border-radius: 0.5rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.2s;
-      }
-      button:hover { background-color: #1D4ED8; }
+      body { background: #0a0a0a; color: #00ff00; font-family: 'Courier New', monospace; padding: 2rem; margin: 0; }
+      .blink { animation: blink 1s step-end infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
     </style>
   </head>
   <body>
-    <div class="header">
-      <h1>ReservaTech</h1>
-      <p class="subtitle">Catálogo de Servicios Técnicos Informáticos</p>
-    </div>
-    
-    <div class="grid">
-      {/* Esto recorre la lista de arriba y crea las tarjetas automáticamente */}
-      {servicios.map((servicio) => (
-        <div class="card">
-          <div class="icon">{servicio.icono}</div>
-          <h2>{servicio.nombre}</h2>
-          <p class="price">{servicio.precio}</p>
-          <p class="time">⏱️ Tiempo aprox: {servicio.tiempo}</p>
-          <button onclick="alert('¡Esta función enviará los datos al backend de NestJS en el futuro!')">
-            Agendar Revisión
-          </button>
-        </div>
-      ))}
-    </div>
+    <h1>root@reservatech:~# ./iniciar_sistema.sh</h1>
+    <p>> Cargando módulos de red...</p>
+    <p>> Escaneando vulnerabilidades locales...</p>
+    <p>> Bypass de seguridad completado. Acceso concedido.</p>
+    <p>root@reservatech:~# <span class="blink">_</span></p>
   </body>
 </html>
